@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--第一遍-->
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.clock{
+				width: 600px;
+				height: 600px;
+				margin: 0 auto;
+				background: url(img/clock.jpg) no-repeat;
+				position: relative;
+			}
+			.clock div{
+				width: 600px;
+				height: 600px;
+				position: absolute;
+				top:0;
+				left: 0;
+			}
+			.clock div.hour{
+				background: url(img/hour.png) no-repeat center center;
+			}
+			.clock div.minute{
+				background: url(img/minute.png) no-repeat center center;
+			}
+			.clock div.second{
+				background: url(img/second.png) no-repeat center center;
+			}
+		</style>
+		<script>
+			window.onload=function(){
+				function $(id){
+					return document.getElementById(id);
+				}
+				
+				function fn(){
+					//获取当前时间
+					var currentTime=new Date();
+					var ms=currentTime.getMilliseconds();
+					
+					var second=currentTime.getSeconds()+ms/1000;
+					var minute=currentTime.getMinutes()+second/60;
+					var hour=currentTime.getHours()+minute/60;
+					
+					
+					
+					//秒针 一次转6度
+					$("s").style.transform="rotate("+second*6+"deg)";
+					$("m").style.transform="rotate("+minute*6+"deg)";
+					$("h").style.transform="rotate("+hour*30+"deg)";
+					
+					$("s").style._webkit_transform="rotate("+second*6+"deg)";
+					$("m").style._webkit_transform="rotate("+minute*6+"deg)";
+					$("h").style._webkit_transform="rotate("+hour*30+"deg)";
+					
+				}
+				setInterval(fn,1000);
+			}
+		</script>
+		<!--第二遍-->
+			<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.clock{
+				width: 600px;
+				height: 600px;
+				margin: 0 auto;
+				background: url(img/clock.jpg) no-repeat;
+				position: relative;
+			}
+			.clock div{
+				width: 600px;
+				height: 600px;
+				position: absolute;
+				top:0;
+				left: 0;
+			}
+			.clock div.hour{
+				background: url(img/hour.png) no-repeat center center;
+			}
+			.clock div.minute{
+				background: url(img/minute.png) no-repeat center center;
+			}
+			.clock div.second{
+				background: url(img/second.png) no-repeat center center;
+			}
+		</style>
+		<script>
+			window.onload=function(){
+				function $(id){
+					return document.getElementById(id);
+				}
+				
+				function fn(){
+					//获取当前时间
+					var currentTime=new Date();
+					var ms=currentTime.getMilliseconds();
+					
+					var second=currentTime.getSeconds()+ms/1000;
+					var minute=currentTime.getMinutes()+second/60;
+					var hour=currentTime.getHours()+minute/60;
+					
+					
+					
+					//秒针 一次转6度
+					$("s").style.transform="rotate("+second*6+"deg)";
+					$("m").style.transform="rotate("+minute*6+"deg)";
+					$("h").style.transform="rotate("+hour*30+"deg)";
+					
+					$("s").style._webkit_transform="rotate("+second*6+"deg)";
+					$("m").style._webkit_transform="rotate("+minute*6+"deg)";
+					$("h").style._webkit_transform="rotate("+hour*30+"deg)";
+					
+				}
+				setInterval(fn,1000);
+			}
+		</script>
+	</head>
+	<body>
+		<!--第一遍-->
+		<div class="clock">
+			<div class="hour" id="h">
+				
+			</div>
+			<div class="minute" id="m">
+				
+			</div>
+			<div class="second" id="s">
+				
+			</div>
+		</div>
+		<!--第二遍-->
+			<div class="clock">
+			<div class="hour" id="h">
+				
+			</div>
+			<div class="minute" id="m">
+				
+			</div>
+			<div class="second" id="s">
+				
+			</div>
+		</div>
+	</body>
+</html>
